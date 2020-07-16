@@ -5,7 +5,7 @@ const reducer = (state, action) => {
     case SET_FAVORITE:
       return {
         ...state,
-        myList: [...state.myList, action.payload],
+        myList: state.myList.filter(item => item.id === action.payload.id).length === 0 ? [...state.myList, action.payload] : [...state.myList],
       };
     case REMOVE_FAVORITE:
       return {
