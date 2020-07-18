@@ -1,4 +1,4 @@
-import { SET_FAVORITE, REMOVE_FAVORITE } from '../types';
+import { SET_FAVORITE, REMOVE_FAVORITE, LOGIN_REQUEST } from '../types';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -11,6 +11,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         myList: state.myList.filter(items => items.id !== action.payload),
+      };
+    case LOGIN_REQUEST:
+      return {
+        ...state,
+        user: action.payload,
       };
     default:
       return state;
