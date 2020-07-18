@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import gravatar from '../utils/gravatar';
@@ -29,7 +30,7 @@ const Header = (props) => {
         </div>
         <ul>
           {hasUser ?
-            <li><a href='/'>{user.name}</a></li> :
+            <li><a href='/'>{user.email}</a></li> :
             null
           }
           {hasUser ?
@@ -54,6 +55,11 @@ const mapStateToProps = (state) => {
 
 const mapDistpachToProps = {
   logoutRequest,
+};
+
+Header.propTypes = {
+  user: PropTypes.object,
+  logoutRequest: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDistpachToProps)(Header);
