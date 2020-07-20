@@ -1,4 +1,4 @@
-import { SET_FAVORITE, REMOVE_FAVORITE, LOGIN_REQUEST, LOGOUT_REQUEST } from '../types';
+import { SET_FAVORITE, REMOVE_FAVORITE, LOGIN_REQUEST, LOGOUT_REQUEST, REGISTER_REQUEST } from '../types';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -13,6 +13,11 @@ const reducer = (state, action) => {
         myList: state.myList.filter(items => items.id !== action.payload),
       };
     case LOGIN_REQUEST:
+      return {
+        ...state,
+        user: action.payload,
+      };
+    case REGISTER_REQUEST:
       return {
         ...state,
         user: action.payload,
