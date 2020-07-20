@@ -5,11 +5,15 @@
   flex-direction: column;
   height: 300px;
   border-radius: 0px 0px 40px 40px;
-}
 
-.main__title {
-  color: white;
-  font-size: 25px;
+  & .isHome {
+    width: 70%;
+  }
+
+  &__title {
+    color: white;
+    font-size: 25px;
+  }
 }
 
 .input {
