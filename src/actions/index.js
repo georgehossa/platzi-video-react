@@ -1,4 +1,4 @@
-import { SET_FAVORITE, REMOVE_FAVORITE, LOGIN_REQUEST, LOGOUT_REQUEST, REGISTER_REQUEST } from '../types';
+import { SET_FAVORITE, REMOVE_FAVORITE, LOGIN_REQUEST, LOGOUT_REQUEST, REGISTER_REQUEST, GET_VIDEO_SOURCE } from '../types';
 
 export const setFavorite = payload => ({
   type: SET_FAVORITE,
@@ -22,6 +22,11 @@ export const registerRequest = payload => ({
 
 export const logoutRequest = payload => ({
   type: LOGOUT_REQUEST,
+  payload,
+});
+
+export const getVideoSource = payload => ({
+  type: GET_VIDEO_SOURCE,
   payload,
 });
 
